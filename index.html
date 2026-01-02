@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>thnkng — Design, código e propósito</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        :root {
+            --bg: #FFFFFF;
+            --fg: #111111;
+            --muted: #B6B6B6;
+            --surface: #EDEDED;
+            --accent: #007AFF;
+            --warn: #FF7A00;
+            --accent-light: #E5F2FF;
+            --warn-light: #FFF3E5;
+            --success: #34C759;
+            --success-light: #E8F8EC;
+            --purple: #AF52DE;
+            --purple-light: #F3E5FF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--bg);
+            color: var(--fg);
+            font-size: 18px;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        h1 {
+            font-size: 56px;
+            font-weight: 300;
+            line-height: 1.2;
+        }
+        
+        h2 {
+            font-size: 40px;
+            font-weight: 400;
+            line-height: 1.3;
+        }
+        
+        h3 {
+            font-size: 28px;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+        
+        .caption {
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--muted);
+        }
+        
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            background-color: var(--bg);
+            border-bottom: 1px solid transparent;
+            transition: border-color 200ms ease-out, box-shadow 200ms ease-out;
+            z-index: 50;
+        }
+        
+        header.scrolled {
+            border-bottom-color: var(--surface);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 500;
+            color: var(--fg);
+            text-decoration: none;
+        }
+        
+        nav a {
+            color: var(--fg);
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 200ms ease-out;
+            padding: 8px 0;
+            position: relative;
+        }
+        
+        nav a:hover {
+            color: var(--accent);
+        }
+        
+        nav a.active {
+            color: var(--accent);
+        }
+        
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: var(--accent);
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-height: 44px;
+            padding: 0 24px;
+            border-radius: 24px;
+            font-size: 16px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 200ms ease-out;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .btn-primary {
+            background-color: var(--fg);
+            color: var(--bg);
+        }
+        
+        .btn-primary:hover {
+            background-color: #333;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--fg);
+            border: 1px solid var(--fg);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--fg);
+            color: var(--bg);
+            transform: translateY(-2px);
+        }
+        
+        .btn-accent {
+            background-color: var(--accent);
+            color: white;
+            border: none;
+        }
+        
+        .btn-accent:hover {
+            background-color: #0066DD;
+            transform: translateY(-2px);
+        }
+        
+        .btn-purple {
+            background-color: var(--purple);
+            color: white;
+            border: none;
+        }
+        
+        .btn-purple:hover {
+            background-color: #9742C5;
+            transform: translateY(-2px);
+        }
+        
+        .btn-small {
+            min-height: 36px;
+            padding: 0 16px;
+            font-size: 14px;
+        }
+        
+        /* Cards */
+        .card {
+            background-color: var(--surface);
+            border-radius: 24px;
+            padding: 32px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            transition: transform 200ms ease-out, box-shadow 200ms ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+        
+        .card-design .card-icon {
+            background-color: var(--accent);
+        }
+        
+        .card-code .card-icon {
+            background-color: var(--purple);
+        }
+        
+        .card-purpose .card-icon {
+            background-color: var(--success);
+        }
+        
+        .card-icon i {
+            color: white !important;
+        }
+        
+        .product-card {
+            background-color: var(--bg);
+            border: 1px solid var(--surface);
+            border-radius: 20px;
+            padding: 24px;
+            transition: all 200ms ease-out;
+            position: relative;
+        }
+        
+        .product-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 122, 255, 0.1);
+        }
+        
+        .product-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .badge-beta {
+            background-color: var(--accent-light);
+            color: var(--accent);
+        }
+        
+        .badge-dev {
+            background-color: var(--muted);
+            color: var(--fg);
+            opacity: 0.7;
+        }
+        
+        .product-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+        }
+        
+        .tag {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 500;
+            color: white;
+        }
+        
+        .tag-finance {
+            background-color: var(--success);
+        }
+        
+        .tag-saas {
+            background-color: var(--accent);
+        }
+        
+        .tag-finops {
+            background-color: var(--warn);
+        }
+        
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        }
+        
+        /* Focus states */
+        *:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+        
+        /* Form */
+        input, textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--surface);
+            border-radius: 16px;
+            font-family: inherit;
+            font-size: 16px;
+            transition: border-color 200ms ease-out;
+        }
+        
+        input:focus, textarea:focus {
+            border-color: var(--accent);
+            outline: none;
+        }
+        
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        /* Responsive typography */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 40px;
+            }
+            
+            h2 {
+                font-size: 32px;
+            }
+            
+            h3 {
+                font-size: 24px;
+            }
+            
+            body {
+                font-size: 16px;
+            }
+        }
+        
+        /* Utilities */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 64px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 32px;
+            }
+        }
+        
+        .section-spacing {
+            padding: 128px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .section-spacing {
+                padding: 80px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="top">
+        <div class="container">
+            <div class="flex flex-col lg:flex-row items-center justify-between py-4 gap-4">
+                <a href="#top" class="logo">thnkng</a>
+                
+                <nav class="flex flex-wrap items-center justify-center gap-4 lg:gap-8">
+                    <a href="#manifesto" data-nav-link>Manifesto</a>
+                    <a href="#o-que-fazemos" data-nav-link>O que fazemos</a>
+                    <a href="#como-ajudamos" data-nav-link>Como ajudamos</a>
+                    <a href="#produtos" data-nav-link>Produtos</a>
+                    <a href="#contato" data-nav-link>Contato</a>
+                </nav>
+                
+                <a href="#contato" class="btn btn-primary btn-small hidden lg:inline-flex">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i>
+                    Falar com a thnkng
+                </a>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <!-- Hero Section -->
+        <section class="section-spacing">
+            <div class="container">
+                <div class="max-w-4xl">
+                    <h1 class="mb-6">Tornamos a tecnologia invisível.</h1>
+                    <p class="text-2xl mb-8" style="color: var(--muted);">Design, código e propósito. Do briefing ao deploy. Sem ruído.</p>
+                    <div class="flex flex-wrap gap-4 mb-4">
+                        <a href="#contato" class="btn btn-accent">
+                            <i data-lucide="send" class="w-5 h-5"></i>
+                            Falar com a thnkng
+                        </a>
+                        <a href="#produtos" class="btn btn-secondary">
+                            <i data-lucide="sparkles" class="w-5 h-5"></i>
+                            Nossos Produtos
+                        </a>
+                    </div>
+                    <p class="caption mt-8">Menos ferramenta. Mais significado.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Manifesto -->
+        <section id="manifesto" class="section-spacing" style="background-color: var(--fg); color: var(--bg);">
+            <div class="container">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-center mb-16" style="color: var(--bg);">Manifesto thnkng</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+                        <div class="space-y-3">
+                            <p class="text-lg">Não estamos aqui para construir mais tecnologia.</p>
+                            <p class="text-lg font-medium">Estamos aqui para reduzir atrito.</p>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <p class="text-lg">A boa tecnologia não se exibe.</p>
+                            <p class="text-lg font-medium">Ela desaparece.</p>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <p class="text-lg">O que precisa ser explicado demais falhou.</p>
+                            <p class="text-lg font-medium">O que é bonito, mas não funciona, também.</p>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <p class="text-lg">Design não é estética.</p>
+                            <p class="text-lg font-medium">É decisão.</p>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <p class="text-lg">Código não é quantidade.</p>
+                            <p class="text-lg font-medium">É clareza.</p>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <p class="text-lg">Propósito não é discurso.</p>
+                            <p class="text-lg font-medium">É critério.</p>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <p class="text-lg">Nós não seguimos tendências.</p>
+                            <p class="text-lg font-medium">Nós removemos o que não importa.</p>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <p class="text-lg">Quando compartilhar faz sentido, compartilhamos.</p>
+                            <p class="text-lg font-medium">Quando não faz, resolvemos.</p>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <p class="text-lg">Às vezes isso vira open source.</p>
+                            <p class="text-lg font-medium">Às vezes vira software sob medida.</p>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <p class="text-lg">Sempre vira algo simples.</p>
+                            <p class="text-lg font-medium">Sempre vira algo inevitável.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center space-y-6 pt-8" style="border-top: 1px solid rgba(255, 255, 255, 0.1);">
+                        <div class="pt-8">
+                            <p class="text-2xl font-medium">thnkng.</p>
+                            <p class="text-lg" style="color: var(--muted);">Design, código e propósito.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- O que fazemos -->
+        <section id="o-que-fazemos" class="section-spacing">
+            <div class="container">
+                <h2 class="text-center mb-16">Três pilares. Um padrão.</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="card card-design">
+                        <div class="card-icon">
+                            <i data-lucide="palette" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="mb-4">Design</h3>
+                        <ul class="space-y-2">
+                            <li>Interfaces silenciosas.</li>
+                            <li>Produto que se entende sem manual.</li>
+                            <li>Decisões visuais que viram confiança.</li>
+                        </ul>
+                    </div>
+                    <div class="card card-code">
+                        <div class="card-icon">
+                            <i data-lucide="code-2" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="mb-4">Código</h3>
+                        <ul class="space-y-2">
+                            <li>Engenharia limpa, legível, escalável.</li>
+                            <li>DX que acelera times.</li>
+                            <li>Performance como requisito, não como ajuste.</li>
+                        </ul>
+                    </div>
+                    <div class="card card-purpose">
+                        <div class="card-icon">
+                            <i data-lucide="compass" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="mb-4">Propósito</h3>
+                        <ul class="space-y-2">
+                            <li>Estratégia antes de features.</li>
+                            <li>Clareza do que importa.</li>
+                            <li>Produto alinhado com impacto real.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Como ajudamos -->
+        <section id="como-ajudamos" class="section-spacing" style="background-color: var(--surface);">
+            <div class="container">
+                <div class="max-w-3xl mx-auto">
+                    <h2 class="mb-12">Menos caos. Mais entrega.</h2>
+                    <ul class="space-y-4 text-lg mb-8">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="target" class="w-6 h-6 mt-1" style="color: var(--accent); flex-shrink: 0;"></i>
+                            <span>Alinhamos visão, escopo e narrativa do produto.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="git-merge" class="w-6 h-6 mt-1" style="color: var(--purple); flex-shrink: 0;"></i>
+                            <span>Transformamos fluxos confusos em experiências claras.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="layers" class="w-6 h-6 mt-1" style="color: var(--success); flex-shrink: 0;"></i>
+                            <span>Padronizamos UI/UX e design system para escalar.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="package" class="w-6 h-6 mt-1" style="color: var(--warn); flex-shrink: 0;"></i>
+                            <span>Refatoramos arquitetura sem quebrar o ritmo do time.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="trending-up" class="w-6 h-6 mt-1" style="color: var(--accent); flex-shrink: 0;"></i>
+                            <span>Entregamos um caminho simples para evoluir.</span>
+                        </li>
+                    </ul>
+                    <p class="text-xl font-medium">Trabalhamos rápido. Com padrão alto. E sem desculpas.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Produtos -->
+        <section id="produtos" class="section-spacing">
+            <div class="container">
+                <div class="max-w-4xl mx-auto mb-12 text-center">
+                    <h2 class="mb-6">Produtos em construção.</h2>
+                    <p class="text-xl" style="color: var(--muted);">Ferramentas que estamos desenvolvendo para simplificar tecnologia, reduzir desperdício e aumentar clareza.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Coins -->
+                    <div class="product-card">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="product-icon" style="background-color: var(--warn);">
+                                <i data-lucide="coins" class="w-5 h-5" style="color: white;"></i>
+                            </div>
+                            <span class="product-badge badge-beta">
+                                <i data-lucide="flask-conical" class="w-3 h-3"></i>
+                                Beta
+                            </span>
+                        </div>
+                        <h3 class="text-xl mb-2">Coins</h3>
+                        <p class="text-sm mb-3">FinOps simplificado que unifica gastos SaaS e cloud, revelando desperdício e mostrando economia clara e acionável.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tag tag-finance">finance</span>
+                            <span class="tag tag-saas">saas</span>
+                            <span class="tag tag-finops">finops</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Hub -->
+                    <div class="product-card">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="product-icon" style="background-color: var(--accent);">
+                                <i data-lucide="grid-3x3" class="w-5 h-5" style="color: white;"></i>
+                            </div>
+                            <span class="product-badge badge-dev">Em desenvolvimento</span>
+                        </div>
+                        <h3 class="text-xl mb-2">Hub</h3>
+                        <p class="text-sm mb-3">Todas as soluções em um só lugar. Integra e unifica as informações conforme você usa, criando uma visão completa e conectada.</p>
+                    </div>
+                    
+                    <!-- Nexus -->
+                    <div class="product-card">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="product-icon" style="background-color: var(--accent);">
+                                <i data-lucide="network" class="w-5 h-5" style="color: white;"></i>
+                            </div>
+                            <span class="product-badge badge-dev">Em desenvolvimento</span>
+                        </div>
+                        <h3 class="text-xl mb-2">Nexus</h3>
+                        <p class="text-sm mb-3">Sua infraestrutura, simplificada. Hub visual e low-code para criar pipelines, ambientes e automações — sem overhead.</p>
+                    </div>
+                    
+                    <!-- Ask -->
+                    <div class="product-card">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="product-icon" style="background-color: var(--success);">
+                                <i data-lucide="message-circle-question" class="w-5 h-5" style="color: white;"></i>
+                            </div>
+                            <span class="product-badge badge-dev">Em desenvolvimento</span>
+                        </div>
+                        <h3 class="text-xl mb-2">Ask</h3>
+                        <p class="text-sm mb-3">Suporte que parece humano. Abra e resolva solicitações através de conversação natural — sem formulários, sem fricção.</p>
+                    </div>
+                    
+                    <!-- Lens -->
+                    <div class="product-card">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="product-icon" style="background-color: var(--accent);">
+                                <i data-lucide="scan" class="w-5 h-5" style="color: white;"></i>
+                            </div>
+                            <span class="product-badge badge-dev">Em desenvolvimento</span>
+                        </div>
+                        <h3 class="text-xl mb-2">Lens</h3>
+                        <p class="text-sm mb-3">Veja o verdadeiro valor da sua tecnologia. Conecte performance, custo e cultura para entender onde sua tech realmente entrega impacto.</p>
+                    </div>
+                    
+                    <!-- Echo -->
+                    <div class="product-card">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="product-icon" style="background-color: var(--purple);">
+                                <i data-lucide="activity" class="w-5 h-5" style="color: white;"></i>
+                            </div>
+                            <span class="product-badge badge-dev">Em desenvolvimento</span>
+                        </div>
+                        <h3 class="text-xl mb-2">Echo</h3>
+                        <p class="text-sm mb-3">Meça foco, não ruído. Entenda como comunicação e troca de contexto impactam a performance do seu time.</p>
+                    </div>
+                    
+                    <!-- Pulse -->
+                    <div class="product-card">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="product-icon" style="background-color: var(--warn);">
+                                <i data-lucide="heart-pulse" class="w-5 h-5" style="color: white;"></i>
+                            </div>
+                            <span class="product-badge badge-dev">Em desenvolvimento</span>
+                        </div>
+                        <h3 class="text-xl mb-2">Pulse</h3>
+                        <p class="text-sm mb-3">Conheça o estado real dos seus sistemas — calmo, tenso ou crítico. Uma nova forma de monitorar infraestrutura: focada, visual, humana.</p>
+                    </div>
+                    
+                    <!-- Flow -->
+                    <div class="product-card">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="product-icon" style="background-color: var(--success);">
+                                <i data-lucide="git-branch" class="w-5 h-5" style="color: white;"></i>
+                            </div>
+                            <span class="product-badge badge-dev">Em desenvolvimento</span>
+                        </div>
+                        <h3 class="text-xl mb-2">Flow</h3>
+                        <p class="text-sm mb-3">Do commit à produção — veja onde seu fluxo quebra. Visualize todo o pipeline de entrega e corrija gargalos antes que eles afetem a velocidade.</p>
+                    </div>
+                    
+                    <!-- Compass -->
+                    <div class="product-card">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="product-icon" style="background-color: var(--accent);">
+                                <i data-lucide="compass" class="w-5 h-5" style="color: white;"></i>
+                            </div>
+                            <span class="product-badge badge-dev">Em desenvolvimento</span>
+                        </div>
+                        <h3 class="text-xl mb-2">Compass</h3>
+                        <p class="text-sm mb-3">O centro de comando da sua organização tech. Veja seu time, sistemas e custos em uma visão clara — sem ruído, apenas verdade.</p>
+                    </div>
+                    
+                    <!-- Minder -->
+                    <div class="product-card">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="product-icon" style="background-color: var(--purple);">
+                                <i data-lucide="brain" class="w-5 h-5" style="color: white;"></i>
+                            </div>
+                            <span class="product-badge badge-dev">Em desenvolvimento</span>
+                        </div>
+                        <h3 class="text-xl mb-2">Minder</h3>
+                        <p class="text-sm mb-3">Analisa bugs, PRs, deploys e inputs manuais para revelar a performance real do seu time — insights baseados em dados, não em suposições.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Software sob medida -->
+        <section id="sob-medida" class="section-spacing">
+            <div class="container">
+                <div class="max-w-3xl mx-auto">
+                    <h2 class="mb-6">Software sob medida.</h2>
+                    <p class="text-xl mb-8">Construímos soluções personalizadas com o mesmo padrão de excelência que aplicamos em tudo que fazemos.</p>
+                    <div class="space-y-4 mb-8">
+                        <p class="text-lg">Regras:</p>
+                        <ul class="space-y-3 text-lg">
+                            <li>Não vendemos horas. Assumimos problemas.</li>
+                            <li>Projetos curados: poucos, estratégicos, com impacto.</li>
+                            <li>Se a solução puder virar referência reutilizável, melhor.</li>
+                        </ul>
+                    </div>
+                    <p class="text-xl font-medium">Clareza, velocidade e impacto real.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contato -->
+        <section id="contato" class="section-spacing" style="background-color: var(--surface);">
+            <div class="container">
+                <div class="max-w-2xl mx-auto">
+                    <h2 class="mb-6 text-center">Vamos construir algo inevitável.</h2>
+                    <p class="text-xl mb-12 text-center">Se você quer simplicidade, qualidade e velocidade com consistência, fale com a gente.</p>
+                    
+                    <form class="space-y-6" id="contactForm">
+                        <div>
+                            <label for="name" class="block mb-2 font-medium">Nome</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block mb-2 font-medium">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div>
+                            <label for="message" class="block mb-2 font-medium">Mensagem</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-accent w-full">
+                            <i data-lucide="send" class="w-5 h-5"></i>
+                            Enviar
+                        </button>
+                    </form>
+                    
+                    <p class="text-center mt-8 caption flex items-center justify-center gap-2">
+                        <i data-lucide="mail" class="w-4 h-4"></i>
+                        Alternativa: <a href="mailto:contato@thnkng.in" style="color: var(--accent);">contato@thnkng.in</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="py-16" style="background-color: var(--surface);">
+        <div class="container">
+            <div class="text-center space-y-2">
+                <p class="font-medium">thnkng. Design, código e propósito.</p>
+                <p class="caption">© 2026 thnkng. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Header scroll effect
+        const header = document.querySelector('header');
+        let lastScroll = 0;
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            lastScroll = currentScroll;
+        });
+        
+        // Active nav link with IntersectionObserver
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('[data-nav-link]');
+        
+        const observerOptions = {
+            root: null,
+            rootMargin: '-20% 0px -70% 0px',
+            threshold: 0
+        };
+        
+        const observerCallback = (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${id}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        };
+        
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+        
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Smooth scroll with reduced motion support
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        
+        if (!prefersReducedMotion) {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+        
+        // Form submission (placeholder)
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Placeholder - no backend integration
+            console.log('Form submitted:', formData);
+            alert('Mensagem enviada com sucesso! (Esta é uma demonstração - sem backend real)');
+            contactForm.reset();
+        });
+        
+        // Focus management for accessibility
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Tab') {
+                document.body.classList.add('user-is-tabbing');
+            }
+        });
+        
+        document.addEventListener('mousedown', () => {
+            document.body.classList.remove('user-is-tabbing');
+        });
+        
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
