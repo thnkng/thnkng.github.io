@@ -91,16 +91,23 @@ header.scrolled {
 }
 
 .logo {
-  font-size: 32px;
-  font-weight: 300;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   color: var(--fg);
   text-decoration: none;
-  letter-spacing: -0.02em;
-  transition: all 250ms ease-out;
+  transition: transform 200ms ease-out;
 }
 
-.logo:hover {
-  color: var(--accent);
+.logo:hover,
+.logo:focus-visible {
+  transform: translateY(-2px);
+}
+
+.logo-image {
+  max-width: 200px;
+  width: 100%;
+  height: auto;
 }
 
 nav a {
