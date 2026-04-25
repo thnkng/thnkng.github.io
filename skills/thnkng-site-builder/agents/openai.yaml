@@ -1,0 +1,4 @@
+version: 1
+display_name: Thnkng Site Builder
+short_description: Implementa o site thnkng.in seguindo a spec oficial
+default_prompt: Use este skill para evoluir o thnkng.in conforme a spec arquitetural, sem expandir escopo fora do que foi definido.

@@ -3,605 +3,372 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>thnkng.in — Design, código e propósito</title>
-    <meta name="description" content="Design, código e propósito. Tornamos a tecnologia invisível para entregar impacto com clareza e velocidade.">
+    <title>thnkng.in - Boutique tecnica para arquitetura, escala e integracao</title>
+    <meta name="description" content="Boutique tecnica para empresas com problemas complexos de arquitetura, escala, performance e integracao. Diagnostico, decisao e engenharia sob medida.">
     <meta name="robots" content="index, follow">
-    <meta name="author" content="Thinkng">
+    <meta name="author" content="thnkng.in">
     <meta name="theme-color" content="#ffffff">
     <link rel="canonical" href="https://thnkng.in/">
     <link rel="alternate" href="https://thnkng.in/" hreflang="pt-BR">
 
-    <!-- Open Graph / Social -->
-    <meta property="og:title" content="thnkng.in — Design, código e propósito">
-    <meta property="og:description" content="Tornamos tecnologia invisível: design, código e propósito para reduzir atrito, escalar produtos e entregar impacto inevitável.">
+    <meta property="og:title" content="thnkng.in - Boutique tecnica para problemas complexos de tecnologia">
+    <meta property="og:description" content="Intervencao tecnica em cenarios criticos de arquitetura, escala, performance e integracao.">
     <meta property="og:image" content="https://thnkng.in/statics/social-logo.png">
     <meta property="og:url" content="https://thnkng.in/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="thnkng.in">
     <meta property="og:locale" content="pt_BR">
-    <meta property="og:image:width" content="833">
-    <meta property="og:image:height" content="289">
-    <meta property="og:image:type" content="image/png">
 
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="thnkng.in — Design, código e propósito">
-    <meta name="twitter:description" content="Tornamos tecnologia invisível: design, código e propósito para reduzir atrito, escalar produtos e entregar impacto inevitável.">
+    <meta name="twitter:title" content="thnkng.in - Arquitetura, escala e integracao">
+    <meta name="twitter:description" content="Boutique tecnica para resolver problemas complexos de tecnologia.">
     <meta name="twitter:image" content="https://thnkng.in/statics/social-logo.png">
-    <meta name="twitter:image:alt" content="Logotipo da Thinkng com ponto magenta.">
-    
-    <!-- Favicon -->
+    <meta name="twitter:image:alt" content="Logotipo da thnkng.in.">
+
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    
-    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS via CDN -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="statics/styles.css">
-    
-        <!-- Lucide Icons -->
-        <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-        <!-- Structured Data -->
-        <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "Thinkng",
-            "url": "https://thnkng.in/",
-            "logo": "https://thnkng.in/statics/logo-thnkng-in.png",
-            "description": "Design, código e propósito. Tornamos a tecnologia invisível para entregar impacto com clareza e velocidade.",
-            "email": "hello@thnkng.in",
-            "contactPoint": [{
-                "@type": "ContactPoint",
-                "contactType": "sales",
-                "email": "hello@thnkng.in",
-                "availableLanguage": ["pt-BR", "en"],
-                "areaServed": "BR"
-            }]
-        }
-        </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "thnkng.in",
+        "url": "https://thnkng.in/",
+        "logo": "https://thnkng.in/statics/logo-thnkng-in.png",
+        "description": "Boutique tecnica para empresas com problemas complexos de arquitetura, escala, performance e integracao.",
+        "email": "hello@thnkng.in",
+        "areaServed": "BR",
+        "availableLanguage": ["pt-BR", "en"],
+        "serviceType": [
+            "Diagnostico tecnico",
+            "Intervencao arquitetural",
+            "Engenharia sob medida",
+            "CTO as a Service"
+        ]
+    }
+    </script>
 </head>
 <body id="top">
-    <!-- Header -->
     <header>
         <div class="container">
-            <div class="flex flex-col lg:flex-row items-center justify-between py-4 gap-4">
-                <a href="#top" class="logo" aria-label="Início da Thinkng">thnkng<span class="logo-dot">.</span>in</a>
+            <div class="header-inner">
+                <a href="#top" class="logo" aria-label="Inicio da thnkng.in">thnkng<span class="logo-dot">.</span>in</a>
 
-                <nav class="flex flex-wrap items-center justify-center gap-4 lg:gap-8" aria-label="Navegação principal">
-                    <a href="#o-que-fazemos" data-nav-link>O que fazemos</a>
-                    <a href="#produtos" data-nav-link>Produtos</a>
-                    <a href="#como-ajudamos" data-nav-link>Como ajudamos</a>
-                    <a href="#manifesto" data-nav-link>Manifesto</a>
+                <nav aria-label="Navegacao principal">
+                    <a href="#top">Home</a>
+                    <a href="#como-atuamos" data-nav-link>Como Atuamos</a>
+                    <a href="#servicos" data-nav-link>Servicos</a>
+                    <a href="#casos" data-nav-link>Casos</a>
+                    <a href="#sobre" data-nav-link>Sobre</a>
                     <a href="#contato" data-nav-link>Contato</a>
                 </nav>
-                
-                <a href="#contato" class="btn btn-primary btn-small hidden lg:inline-flex">
-                    <i data-lucide="message-circle" class="w-4 h-4"></i>
-                    Falar conosco
+
+                <a href="#contato" class="btn btn-primary btn-small header-cta">
+                    <i data-lucide="message-square-text"></i>
+                    Solicitar diagnostico
                 </a>
             </div>
         </div>
     </header>
-    
+
     <main>
-        <!-- Hero Section -->
-        <section class="section-spacing" style="background-color: var(--bg);">
+        <section class="hero-section">
+            <div class="hero-canvas-wrap" aria-hidden="true">
+                <canvas id="hero-canvas" class="hero-canvas"></canvas>
+            </div>
             <div class="container">
-                <div class="max-w-4xl">
-                    <h1 class="mb-6">Tudo que seu time de tech precisa. Em um só lugar.</h1>
-                    <p class="text-2xl mb-10" style="color: var(--fg); opacity: 0.7; line-height: 1.5;">Ferramentas integradas para FinOps, DevOps e insights. Comece com o que precisa. Adicione quando fizer sentido.</p>
-                    <div class="flex flex-wrap gap-4 mb-6">
-                        <a href="#produtos" class="btn btn-accent">
-                            <i data-lucide="sparkles" class="w-5 h-5"></i>
-                            Conhecer ferramentas
+                <div class="hero-layout">
+                    <div class="hero-copy">
+                        <p class="eyebrow">Boutique tecnica para problemas criticos</p>
+                        <h1>Resolvemos problemas complexos de arquitetura e sistemas.</h1>
+                        <p class="hero-subtitle">Intervencao tecnica em cenarios criticos de escala, performance e integracao, quando a decisao errada custa caro.</p>
+                        <div class="hero-actions">
+                            <a href="#contato" class="btn btn-accent">
+                                <i data-lucide="clipboard-pen-line"></i>
+                                Solicitar diagnostico
+                            </a>
+                            <a href="#contato" class="btn btn-secondary">
+                                <i data-lucide="message-circle"></i>
+                                Falar sobre um problema
+                            </a>
+                        </div>
+                    </div>
+
+                    <aside class="signal-panel" aria-label="Quando chamar a thnkng.in">
+                        <p class="panel-kicker">Quando chamar</p>
+                        <h2>Quando o problema ja deixou de ser backlog.</h2>
+                        <ul class="check-list">
+                            <li><i data-lucide="trending-up"></i><span>Sistema nao escala ou degrada sob carga.</span></li>
+                            <li><i data-lucide="git-branch-plus"></i><span>Arquitetura virou gargalo para produto e operacao.</span></li>
+                            <li><i data-lucide="unplug"></i><span>Integracoes falham, duplicam dados ou travam processos.</span></li>
+                            <li><i data-lucide="circle-alert"></i><span>Decisoes tecnicas criticas seguem indefinidas.</span></li>
+                        </ul>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-spacing needs-section">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Atracao com filtro</p>
+                    <h2>Para empresas com problemas reais de arquitetura, escala ou integracao.</h2>
+                    <p>Entramos quando ha impacto concreto no negocio: risco operacional, queda de performance, custo tecnico crescente ou impossibilidade de evoluir o produto com seguranca.</p>
+                </div>
+
+                <div class="dense-grid">
+                    <article class="compact-card">
+                        <i data-lucide="activity"></i>
+                        <h3>Sistema nao escala</h3>
+                        <p>Picos de uso, latencia, filas, banco pressionado ou infraestrutura cara sem clareza de causa.</p>
+                    </article>
+                    <article class="compact-card">
+                        <i data-lucide="blocks"></i>
+                        <h3>Arquitetura virou gargalo</h3>
+                        <p>Times lentos, acoplamento alto, releases arriscados e decisoes acumuladas sem dono tecnico claro.</p>
+                    </article>
+                    <article class="compact-card">
+                        <i data-lucide="cable"></i>
+                        <h3>Integracoes falhando</h3>
+                        <p>Sistemas distribuidos, fornecedores externos, dados inconsistentes e rotinas criticas instaveis.</p>
+                    </article>
+                    <article class="compact-card">
+                        <i data-lucide="circle-pause"></i>
+                        <h3>Produto travado</h3>
+                        <p>A estrategia existe, mas a base tecnica impede evolucao confiavel ou amplia muito o custo de mudanca.</p>
+                    </article>
+                    <article class="compact-card">
+                        <i data-lucide="route"></i>
+                        <h3>Decisoes indefinidas</h3>
+                        <p>Build ou buy, monolito ou servicos, cloud ou hibrido, refatorar ou reescrever: falta criterio.</p>
+                    </article>
+                    <article class="compact-card">
+                        <i data-lucide="shield-alert"></i>
+                        <h3>Ambiente critico</h3>
+                        <p>Banco, health, operacoes reguladas ou produtos onde falha tecnica nao e apenas inconveniente.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="como-atuamos" class="section-spacing dark-section">
+            <div class="container">
+                <div class="section-heading light">
+                    <p class="eyebrow">Modelo de atuacao</p>
+                    <h2>Diagnosticar. Decidir. Resolver.</h2>
+                    <p>Sem pacote generico. Primeiro entendemos o problema, depois definimos a decisao tecnica e so entao construimos o que precisa existir.</p>
+                </div>
+
+                <div class="process-grid">
+                    <article class="process-card">
+                        <span>01</span>
+                        <i data-lucide="scan-search"></i>
+                        <h3>Diagnostico</h3>
+                        <p>Analisamos arquitetura, fluxo de dados, gargalos, operacao, codigo critico e contexto de negocio.</p>
+                        <p class="small-note">Entrega: leitura tecnica, riscos, causas provaveis e plano acionavel. Tempo tipico: 1 a 3 semanas.</p>
+                    </article>
+                    <article class="process-card">
+                        <span>02</span>
+                        <i data-lucide="waypoints"></i>
+                        <h3>Arquitetura</h3>
+                        <p>Definimos abordagem, trade-offs, sequenciamento e criterios para reduzir risco antes de investir pesado.</p>
+                        <p class="small-note">Entrega: decisoes tecnicas, desenho alvo, prioridades e caminho de execucao.</p>
+                    </article>
+                    <article class="process-card">
+                        <span>03</span>
+                        <i data-lucide="code-xml"></i>
+                        <h3>Engenharia sob medida</h3>
+                        <p>Construimos partes criticas quando a solucao exige execucao tecnica direta, nao apenas recomendacao.</p>
+                        <p class="small-note">Entrega: nucleo funcional, integracao, refatoracao critica ou fundacao tecnica.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="servicos" class="section-spacing">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Atuacao</p>
+                    <h2>Ofertas para problemas que exigem decisao tecnica senior.</h2>
+                </div>
+
+                <div class="offer-list">
+                    <article class="offer-row">
+                        <div>
+                            <span class="offer-index">01</span>
+                            <h3>Diagnostico tecnico</h3>
+                        </div>
+                        <p>Avaliacao profunda de arquitetura, codigo, operacao, infraestrutura e integracoes para chegar a um plano claro.</p>
+                        <ul>
+                            <li>Levantamento de riscos</li>
+                            <li>Mapa de gargalos</li>
+                            <li>Plano acionavel</li>
+                        </ul>
+                    </article>
+                    <article class="offer-row">
+                        <div>
+                            <span class="offer-index">02</span>
+                            <h3>Intervencao arquitetural</h3>
+                        </div>
+                        <p>Redesenho de sistemas, dominios, fluxos e componentes para remover gargalos e reduzir custo de mudanca.</p>
+                        <ul>
+                            <li>Decisoes estruturais</li>
+                            <li>Plano de migracao</li>
+                            <li>Reducao de risco</li>
+                        </ul>
+                    </article>
+                    <article class="offer-row">
+                        <div>
+                            <span class="offer-index">03</span>
+                            <h3>Engenharia sob medida</h3>
+                        </div>
+                        <p>Construcao de solucoes especificas, nucleos criticos, integracoes ou componentes que precisam nascer corretos.</p>
+                        <ul>
+                            <li>Implementacao critica</li>
+                            <li>Integracoes complexas</li>
+                            <li>Performance e confiabilidade</li>
+                        </ul>
+                    </article>
+                    <article class="offer-row">
+                        <div>
+                            <span class="offer-index">04</span>
+                            <h3>CTO as a Service</h3>
+                        </div>
+                        <p>Apoio continuo para lideres que precisam de criterio tecnico senior em decisoes estrategicas.</p>
+                        <ul>
+                            <li>Direcao tecnica</li>
+                            <li>Apoio a lideranca</li>
+                            <li>Revisao de arquitetura</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="casos" class="section-spacing muted-section">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Casos e experiencia</p>
+                    <h2>Experiencia pratica em cenarios onde a tecnologia precisa ficar de pe.</h2>
+                </div>
+
+                <div class="case-grid">
+                    <article class="case-card">
+                        <p class="case-label">Plataformas em ciclo acelerado</p>
+                        <h3>Multiplas plataformas em 8 meses</h3>
+                        <dl>
+                            <div><dt>Problema</dt><dd>Construir varias frentes sem perder coerencia tecnica nem criar uma base fragil.</dd></div>
+                            <div><dt>Solucao</dt><dd>Arquitetura eficiente, padroes claros, recorte correto de nucleos e execucao direta.</dd></div>
+                            <div><dt>Resultado</dt><dd>Entregas consistentes, baixa incidencia de bugs e base preparada para evolucao.</dd></div>
+                        </dl>
+                    </article>
+                    <article class="case-card">
+                        <p class="case-label">Integracoes complexas</p>
+                        <h3>Sistemas distribuidos e dados criticos</h3>
+                        <dl>
+                            <div><dt>Problema</dt><dd>Processos dependentes de integracoes externas, inconsistencias e falhas dificeis de rastrear.</dd></div>
+                            <div><dt>Solucao</dt><dd>Revisao de fluxos, contratos, resiliencia, observabilidade e pontos de recuperacao.</dd></div>
+                            <div><dt>Resultado</dt><dd>Menos fragilidade operacional e mais clareza sobre onde agir quando algo falha.</dd></div>
+                        </dl>
+                    </article>
+                    <article class="case-card">
+                        <p class="case-label">Ambientes criticos</p>
+                        <h3>Banco, health e operacoes sensiveis</h3>
+                        <dl>
+                            <div><dt>Problema</dt><dd>Sistemas com baixa tolerancia a erro, alto impacto operacional e decisoes tecnicas caras.</dd></div>
+                            <div><dt>Solucao</dt><dd>Arquitetura orientada a risco, criterios de confiabilidade e execucao nas partes essenciais.</dd></div>
+                            <div><dt>Resultado</dt><dd>Decisoes mais seguras, operacao mais previsivel e foco no que realmente reduz risco.</dd></div>
+                        </dl>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre" class="section-spacing">
+            <div class="container">
+                <div class="about-layout">
+                    <div>
+                        <p class="eyebrow">Sobre</p>
+                        <h2>Experiencia pratica em ambientes criticos, nao apenas teoria.</h2>
+                    </div>
+                    <div class="about-copy">
+                        <p>A thnkng.in e uma boutique tecnica liderada por experiencia direta em CTO, arquitetura e engenharia de sistemas. A atuacao combina diagnostico, decisao e execucao quando o problema exige senioridade real.</p>
+                        <p>Mais de 20 anos em tecnologia, passando por produtos digitais, integracoes, plataformas, ambientes regulados e sistemas onde performance, confiabilidade e clareza arquitetural importam.</p>
+                        <div class="metric-row">
+                            <div><strong>20+</strong><span>anos de experiencia</span></div>
+                            <div><strong>CTO</strong><span>atuacao executiva e tecnica</span></div>
+                            <div><strong>Senior</strong><span>decisao + execucao</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="nao-fazemos" class="section-spacing dark-section compact-dark">
+            <div class="container">
+                <div class="filter-layout">
+                    <div>
+                        <p class="eyebrow">O que nao fazemos</p>
+                        <h2>Nao somos software house, outsourcing ou fabrica de backlog.</h2>
+                    </div>
+                    <div class="no-list">
+                        <div><i data-lucide="x"></i><span>Nao fazemos software generico.</span></div>
+                        <div><i data-lucide="x"></i><span>Nao alocamos desenvolvedores.</span></div>
+                        <div><i data-lucide="x"></i><span>Nao executamos backlog continuo.</span></div>
+                        <div><i data-lucide="x"></i><span>Nao atuamos como consultoria generica.</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="section-spacing contact-section">
+            <div class="container">
+                <div class="contact-layout">
+                    <div>
+                        <p class="eyebrow">Conversao qualificada</p>
+                        <h2>Descreva seu problema.</h2>
+                        <p>Se existe um problema tecnico concreto com impacto no negocio, conte o contexto. A primeira conversa serve para entender se a thnkng.in e o tipo certo de intervencao.</p>
+                        <div class="contact-note">
+                            <strong>Bom sinal:</strong> voce consegue explicar o sistema, o problema atual, o impacto e a urgencia.
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <p class="panel-kicker">E-mail direto</p>
+                        <h3>Envie o contexto do seu problema para hello@thnkng.in</h3>
+                        <p>Inclua o sistema envolvido, o problema atual, o impacto no negocio e a urgencia. Isso ajuda a primeira conversa a ir direto ao ponto.</p>
+                        <a class="btn btn-accent" href="mailto:hello@thnkng.in?subject=Solicitar%20diagnostico%20tecnico&body=Contexto%20do%20sistema%3A%0A%0AProblema%20atual%3A%0A%0AImpacto%3A%0A%0AUrgencia%3A%0A">
+                            <i data-lucide="send"></i>
+                            Enviar e-mail
                         </a>
-                        <a href="#contato" class="btn btn-secondary">
-                            <i data-lucide="message-circle" class="w-5 h-5"></i>
-                            Falar conosco
-                        </a>
-                    </div>
-                    <p class="text-sm" style="color: var(--muted); font-weight: 500;">Open source quando possível. Sob medida quando necessário.</p>
-                </div>
-            </div>
-        </section>
-        
-        <!-- O que fazemos -->
-        <section id="o-que-fazemos" class="section-spacing" style="background-color: var(--bg);">
-            <div class="container">
-                <h2 class="text-center mb-16">Três coisas. Feitas direito.</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="card card-design">
-                        <div class="card-icon">
-                            <i data-lucide="palette" class="w-7 h-7"></i>
-                        </div>
-                        <h3 class="mb-4">Design</h3>
-                        <ul class="space-y-2">
-                            <li>Interfaces que você não percebe.</li>
-                            <li>Produtos que se explicam sozinhos.</li>
-                            <li>Decisões visuais que viram confiança.</li>
-                        </ul>
-                    </div>
-                    <div class="card card-code">
-                        <div class="card-icon">
-                            <i data-lucide="code-2" class="w-7 h-7"></i>
-                        </div>
-                        <h3 class="mb-4">Código</h3>
-                        <ul class="space-y-2">
-                            <li>Simples. Rápido. Escalável.</li>
-                            <li>Times mais produtivos.</li>
-                            <li>Performance não é opcional.</li>
-                        </ul>
-                    </div>
-                    <div class="card card-purpose">
-                        <div class="card-icon">
-                            <i data-lucide="compass" class="w-7 h-7"></i>
-                        </div>
-                        <h3 class="mb-4">Propósito</h3>
-                        <ul class="space-y-2">
-                            <li>Estratégia antes de features.</li>
-                            <li>Apenas o que importa.</li>
-                            <li>Impacto real, não métricas de vaidade.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Produtos -->
-        <section id="produtos" class="section-spacing" style="background-color: var(--surface);">
-            <div class="container">
-                <div class="max-w-4xl mx-auto mb-12 text-center">
-                    <h2 class="mb-6">O que estamos construindo.</h2>
-                    <p class="text-xl" style="color: var(--muted);">Ferramentas que simplificam tecnologia. Prontas quando estiverem prontas.</p>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Coins -->
-                    <div class="product-card">
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="product-icon">
-                                <i data-lucide="circle-dollar-sign" class="w-8 h-8" style="color: var(--warn); stroke-width: 1.5;"></i>
-                            </div>
-                            <span class="product-badge badge-alpha">
-                                <i data-lucide="flask-conical" class="w-3 h-3"></i>
-                                Alpha
-                            </span>
-                        </div>
-                        <h3 class="text-xl mb-2">Coins</h3>
-                        <p class="text-sm mb-3">FinOps simplificado que unifica gastos SaaS e cloud, revelando desperdício e mostrando economia clara e acionável.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tag tag-finance">finance</span>
-                            <span class="tag tag-saas">saas</span>
-                            <span class="tag tag-finops">finops</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Minder -->
-                    <div class="product-card">
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="product-icon">
-                                <i data-lucide="brain" class="w-8 h-8" style="color: var(--purple); stroke-width: 1.5;"></i>
-                            </div>
-                        </div>
-                        <h3 class="text-xl mb-2">Minder</h3>
-                        <p class="text-sm mb-3">Analisa bugs, PRs, deploys e inputs manuais para revelar a performance real do seu time — insights baseados em dados, não em suposições.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tag tag-analytics">analytics</span>
-                            <span class="tag tag-performance">performance</span>
-                            <span class="tag tag-insights">insights</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Nexus -->
-                    <div class="product-card">
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="product-icon">
-                                <i data-lucide="network" class="w-8 h-8" style="color: #FFD60A; stroke-width: 1.5;"></i>
-                            </div>
-                        </div>
-                        <h3 class="text-xl mb-2">Nexus</h3>
-                        <p class="text-sm mb-3">Monte infraestrutura visual. Crie pipelines e ambientes sem código.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tag tag-infrastructure">infrastructure</span>
-                            <span class="tag tag-devops">devops</span>
-                            <span class="tag tag-automation">automation</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Ask -->
-                    <div class="product-card">
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="product-icon">
-                                <i data-lucide="message-circle-question" class="w-8 h-8" style="color: var(--success); stroke-width: 1.5;"></i>
-                            </div>
-                        </div>
-                        <h3 class="text-xl mb-2">Ask</h3>
-                        <p class="text-sm mb-3">Atendimento por conversa. Abra e resolva tickets naturalmente. Sem formulários.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tag tag-support">support</span>
-                            <span class="tag tag-helpdesk">helpdesk</span>
-                            <span class="tag tag-ai">ai</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Lens -->
-                    <div class="product-card">
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="product-icon">
-                                <i data-lucide="scan" class="w-8 h-8" style="color: #007AFF; stroke-width: 1.5;"></i>
-                            </div>
-                        </div>
-                        <h3 class="text-xl mb-2">Lens</h3>
-                        <p class="text-sm mb-3">Quanto sua tech vale? Conecte custo, performance e impacto. Veja o ROI real.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tag tag-analytics">analytics</span>
-                            <span class="tag tag-metrics">metrics</span>
-                            <span class="tag tag-insights">insights</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Echo -->
-                    <div class="product-card">
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="product-icon">
-                                <i data-lucide="activity" class="w-8 h-8" style="color: #9742C5; stroke-width: 1.5;"></i>
-                            </div>
-                        </div>
-                        <h3 class="text-xl mb-2">Echo</h3>
-                        <p class="text-sm mb-3">Comunicação completa. Interna e externa. Disparo de e-mail, mensagens, tudo.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tag tag-communication">communication</span>
-                            <span class="tag tag-email">email</span>
-                            <span class="tag tag-messaging">messaging</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Pulse -->
-                    <div class="product-card">
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="product-icon">
-                                <i data-lucide="heart-pulse" class="w-8 h-8" style="color: #FF3B30; stroke-width: 1.5;"></i>
-                            </div>
-                        </div>
-                        <h3 class="text-xl mb-2">Pulse</h3>
-                        <p class="text-sm mb-3">Monitoramento humano. Veja se seus sistemas estão calmos, tensos ou críticos.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tag tag-monitoring">monitoring</span>
-                            <span class="tag tag-observability">observability</span>
-                            <span class="tag tag-infrastructure">infrastructure</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Flow -->
-                    <div class="product-card">
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="product-icon">
-                                <i data-lucide="git-branch" class="w-8 h-8" style="color: #30D158; stroke-width: 1.5;"></i>
-                            </div>
-                        </div>
-                        <h3 class="text-xl mb-2">Flow</h3>
-                        <p class="text-sm mb-3">Acompanhe código até produção. Veja gargalos no pipeline. Entregue mais rápido.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tag tag-devops">devops</span>
-                            <span class="tag tag-cicd">ci/cd</span>
-                            <span class="tag tag-delivery">delivery</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Compass -->
-                    <div class="product-card">
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="product-icon">
-                                <i data-lucide="compass" class="w-8 h-8" style="color: #32ADE6; stroke-width: 1.5;"></i>
-                            </div>
-                        </div>
-                        <h3 class="text-xl mb-2">Compass</h3>
-                        <p class="text-sm mb-3">Painel executivo de tech. Status geral, times, custos. Tudo em uma tela.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tag tag-management">management</span>
-                            <span class="tag tag-overview">overview</span>
-                            <span class="tag tag-platform">platform</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Thread -->
-                    <div class="product-card">
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="product-icon">
-                                <i data-lucide="inbox" class="w-8 h-8" style="color: #FF453A; stroke-width: 1.5;"></i>
-                            </div>
-                        </div>
-                        <h3 class="text-xl mb-2">Thread</h3>
-                        <p class="text-sm mb-3">Uma caixa de entrada para tudo. Email, tickets, notificações. Conectado.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tag tag-productivity">productivity</span>
-                            <span class="tag tag-support">support</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Forge -->
-                    <div class="product-card">
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="product-icon">
-                                <i data-lucide="hammer" class="w-8 h-8" style="color: #64D2FF; stroke-width: 1.5;"></i>
-                            </div>
-                        </div>
-                        <h3 class="text-xl mb-2">Forge</h3>
-                        <p class="text-sm mb-3">Gerencie produto e tech. Demandas, tarefas, documentação. Tudo integrado.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tag tag-management">management</span>
-                            <span class="tag tag-collaboration">collaboration</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Hub -->
-                    <div class="product-card">
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="product-icon">
-                                <i data-lucide="grid-3x3" class="w-8 h-8" style="color: #5E5CE6; stroke-width: 1.5;"></i>
-                            </div>
-                        </div>
-                        <h3 class="text-xl mb-2">Hub</h3>
-                        <p class="text-sm mb-3">Sua plataforma completa. Todos os produtos thnkng.in integrados em um só lugar.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tag tag-platform">platform</span>
-                            <span class="tag tag-integration">integration</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Como ajudamos -->
-        <section id="como-ajudamos" class="section-spacing" style="background-color: var(--bg);">
-            <div class="container">
-                <div class="max-w-3xl mx-auto">
-                    <h2 class="mb-12">Menos caos. Mais entrega.</h2>
-                    <ul class="space-y-4 text-lg mb-8">
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="target" class="w-6 h-6 mt-1" style="color: var(--accent); flex-shrink: 0;"></i>
-                            <span>Transformamos ideias confusas em produtos claros.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="git-merge" class="w-6 h-6 mt-1" style="color: var(--purple); flex-shrink: 0;"></i>
-                            <span>Eliminamos complexidade desnecessária.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="layers" class="w-6 h-6 mt-1" style="color: var(--success); flex-shrink: 0;"></i>
-                            <span>Criamos sistemas que escalam sem quebrar.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="package" class="w-6 h-6 mt-1" style="color: var(--warn); flex-shrink: 0;"></i>
-                            <span>Evoluímos sua tecnologia sem parar o time.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="trending-up" class="w-6 h-6 mt-1" style="color: var(--accent); flex-shrink: 0;"></i>
-                            <span>Aceleramos entregas sem atalhos.</span>
-                        </li>
-                    </ul>
-                    <p class="text-xl font-medium">Rápido. Simples. Impecável.</p>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Manifesto -->
-        <section id="manifesto" class="section-spacing" style="background-color: var(--fg); color: var(--bg);">
-            <div class="container">
-                <div class="max-w-4xl mx-auto">
-                    <h2 class="text-center mb-16" style="color: var(--bg);">Manifesto thnkng.in</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
-                        <div class="space-y-3">
-                            <p class="text-lg" style="opacity: 0.8;">Não estamos aqui para construir mais tecnologia.</p>
-                            <p class="text-lg font-semibold">Estamos aqui para reduzir atrito.</p>
-                        </div>
-                        
-                        <div class="space-y-3">
-                            <p class="text-lg">A boa tecnologia não se exibe.</p>
-                            <p class="text-lg font-medium">Ela desaparece.</p>
-                        </div>
-                        
-                        <div class="space-y-3">
-                            <p class="text-lg">O que precisa ser explicado demais falhou.</p>
-                            <p class="text-lg font-medium">O que é bonito, mas não funciona, também.</p>
-                        </div>
-                        
-                        <div class="space-y-3">
-                            <p class="text-lg">Design não é estética.</p>
-                            <p class="text-lg font-medium">É decisão.</p>
-                        </div>
-                        
-                        <div class="space-y-3">
-                            <p class="text-lg">Código não é quantidade.</p>
-                            <p class="text-lg font-medium">É clareza.</p>
-                        </div>
-                        
-                        <div class="space-y-3">
-                            <p class="text-lg">Propósito não é discurso.</p>
-                            <p class="text-lg font-medium">É critério.</p>
-                        </div>
-                        
-                        <div class="space-y-3">
-                            <p class="text-lg">Nós não seguimos tendências.</p>
-                            <p class="text-lg font-medium">Nós removemos o que não importa.</p>
-                        </div>
-                        
-                        <div class="space-y-3">
-                            <p class="text-lg">Quando compartilhar faz sentido, compartilhamos.</p>
-                            <p class="text-lg font-medium">Quando não faz, resolvemos.</p>
-                        </div>
-                        
-                        <div class="space-y-3">
-                            <p class="text-lg">Às vezes isso vira open source.</p>
-                            <p class="text-lg font-medium">Às vezes vira software sob medida.</p>
-                        </div>
-                        
-                        <div class="space-y-3">
-                            <p class="text-lg">Sempre vira algo simples.</p>
-                            <p class="text-lg font-medium">Sempre vira algo inevitável.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="text-center space-y-6 pt-8" style="border-top: 1px solid rgba(255, 255, 255, 0.1);">
-                        <div class="pt-8">
-                            <p class="text-2xl font-medium">thnkng.in.</p>
-                            <p class="text-lg" style="color: var(--muted);">Design, código e propósito.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-       
-        <!-- Software sob medida -->
-        <section class="section-spacing" style="background-color: var(--surface);">
-            <div class="container">
-                <div class="max-w-3xl mx-auto text-center">
-                    <h2 class="mb-6">Quando precisar de algo único.</h2>
-                    <p class="text-lg mb-8" style="line-height: 1.7;">
-                        Construímos soluções personalizadas com o mesmo padrão de excelência de tudo que fazemos.
-                    </p>
-                    <div class="max-w-2xl mx-auto mb-10">
-                        <p class="text-left mb-4" style="opacity: 0.8;">Regras simples:</p>
-                        <ul class="text-left space-y-3" style="opacity: 0.8;">
-                            <li class="flex items-start gap-3">
-                                <i data-lucide="check" class="w-5 h-5 mt-1" style="color: var(--success); flex-shrink: 0;"></i>
-                                <span>Não vendemos horas. Assumimos problemas.</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i data-lucide="check" class="w-5 h-5 mt-1" style="color: var(--success); flex-shrink: 0;"></i>
-                                <span>Projetos curados. Poucos. Estratégicos.</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i data-lucide="check" class="w-5 h-5 mt-1" style="color: var(--success); flex-shrink: 0;"></i>
-                                <span>Se virar referência reutilizável, melhor ainda.</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <p class="text-xl font-medium mb-8">Clareza, velocidade e impacto real.</p>
-                    <a href="#contato" class="btn btn-accent">
-                        <i data-lucide="rocket" class="w-5 h-5"></i>
-                        Falar sobre projeto
-                    </a>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Contato -->
-        <section id="contato" class="section-spacing" style="background-color: var(--bg);">
-            <div class="container">
-                <div class="max-w-5xl mx-auto">
-                    <div class="text-center mb-16">
-                        <h2 class="mb-6">Três formas de começar.</h2>
-                        <p class="text-xl" style="color: var(--muted);">Escolha como quer trabalhar conosco.</p>
-                    </div>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-                        <!-- Opção 1: Conhecer Plataforma -->
-                        <div class="card" style="text-align: center;">
-                            <div class="flex justify-center mb-4">
-                                <div class="product-icon" style="background-color: var(--accent-light);">
-                                    <i data-lucide="grid-3x3" class="w-7 h-7" style="color: var(--accent);"></i>
-                                </div>
-                            </div>
-                            <h3 class="mb-3">Conhecer Plataforma</h3>
-                            <p class="text-sm mb-6" style="color: var(--muted);">Veja como as ferramentas funcionam juntas para o seu time.</p>
-                            <a href="mailto:hello@thnkng.in?subject=Conhecer%20Plataforma" class="btn btn-accent" style="width: 100%;">
-                                <i data-lucide="sparkles" class="w-5 h-5"></i>
-                                Agendar demo
-                            </a>
-                        </div>
-                        
-                        <!-- Opção 2: Começar com Ferramenta -->
-                        <div class="card" style="text-align: center;">
-                            <div class="flex justify-center mb-4">
-                                <div class="product-icon" style="background-color: var(--purple-light);">
-                                    <i data-lucide="package" class="w-7 h-7" style="color: var(--purple);"></i>
-                                </div>
-                            </div>
-                            <h3 class="mb-3">Começar com Ferramenta</h3>
-                            <p class="text-sm mb-6" style="color: var(--muted);">Coins, Minder ou outra solução específica para sua necessidade.</p>
-                            <a href="mailto:hello@thnkng.in?subject=Começar%20com%20Ferramenta" class="btn btn-purple" style="width: 100%;">
-                                <i data-lucide="rocket" class="w-5 h-5"></i>
-                                Testar agora
-                            </a>
-                        </div>
-                        
-                        <!-- Opção 3: Projeto Sob Medida -->
-                        <div class="card" style="text-align: center;">
-                            <div class="flex justify-center mb-4">
-                                <div class="product-icon" style="background-color: var(--surface);">
-                                    <i data-lucide="code-2" class="w-7 h-7" style="color: var(--fg);"></i>
-                                </div>
-                            </div>
-                            <h3 class="mb-3">Projeto Sob Medida</h3>
-                            <p class="text-sm mb-6" style="color: var(--muted);">Solução personalizada quando as ferramentas prontas não atendem.</p>
-                            <a href="mailto:hello@thnkng.in?subject=Projeto%20Sob%20Medida" class="btn btn-secondary" style="width: 100%;">
-                                <i data-lucide="message-square" class="w-5 h-5"></i>
-                                Falar sobre projeto
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="text-center">
-                        <p class="text-lg mb-3">Ou envie um email direto:</p>
-                        <a href="mailto:hello@thnkng.in" class="text-2xl font-medium" style="color: var(--accent); text-decoration: none;">hello@thnkng.in</a>
-                        <p class="text-sm mt-4" style="color: var(--muted); font-weight: 500;">Resposta em menos de 4 horas úteis.</p>
+                        <a class="mail-link" href="mailto:hello@thnkng.in">hello@thnkng.in</a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
-    
-    <!-- Footer -->
-    <footer class="py-16" style="background-color: var(--fg); color: var(--bg);">
+
+    <footer>
         <div class="container">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-                <div>
-                    <h3 class="text-sm font-semibold mb-4" style="color: var(--bg); opacity: 0.9;">Produtos</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#coins" class="text-sm" style="color: var(--bg); opacity: 0.7; text-decoration: none;">Coins</a></li>
-                        <li><a href="#produtos" class="text-sm" style="color: var(--bg); opacity: 0.7; text-decoration: none;">Minder</a></li>
-                        <li><a href="#produtos" class="text-sm" style="color: var(--bg); opacity: 0.7; text-decoration: none;">Nexus</a></li>
-                        <li><a href="#produtos" class="text-sm" style="color: var(--bg); opacity: 0.7; text-decoration: none;">Ver todos</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-sm font-semibold mb-4" style="color: var(--bg); opacity: 0.9;">Empresa</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#manifesto" class="text-sm" style="color: var(--bg); opacity: 0.7; text-decoration: none;">Manifesto</a></li>
-                        <li><a href="#o-que-fazemos" class="text-sm" style="color: var(--bg); opacity: 0.7; text-decoration: none;">Como trabalhamos</a></li>
-                        <li><a href="#como-ajudamos" class="text-sm" style="color: var(--bg); opacity: 0.7; text-decoration: none;">Como ajudamos</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-sm font-semibold mb-4" style="color: var(--bg); opacity: 0.9;">Recursos</h3>
-                    <ul class="space-y-2">
-                        <li><span class="text-sm" style="color: var(--bg); opacity: 0.5;">Changelog (em breve)</span></li>
-                        <li><span class="text-sm" style="color: var(--bg); opacity: 0.5;">Documentação (em breve)</span></li>
-                        <li><span class="text-sm" style="color: var(--bg); opacity: 0.5;">Status (em breve)</span></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-sm font-semibold mb-4" style="color: var(--bg); opacity: 0.9;">Legal</h3>
-                    <ul class="space-y-2">
-                        <li><span class="text-sm" style="color: var(--bg); opacity: 0.5;">Termos (em breve)</span></li>
-                        <li><span class="text-sm" style="color: var(--bg); opacity: 0.5;">Privacidade (em breve)</span></li>
-                        <li><span class="text-sm" style="color: var(--bg); opacity: 0.5;">SLA (em breve)</span></li>
-                    </ul>
+            <div class="footer-inner">
+                <a href="#top" class="logo">thnkng<span class="logo-dot">.</span>in</a>
+                <p>Boutique tecnica para arquitetura, escala e integracao.</p>
+                <div class="footer-links">
+                    <a href="#como-atuamos">Como Atuamos</a>
+                    <a href="#servicos">Servicos</a>
+                    <a href="#casos">Casos</a>
+                    <a href="#contato">Contato</a>
                 </div>
             </div>
-            <div class="text-center pt-8" style="border-top: 1px solid rgba(255, 255, 255, 0.1);">
-                <p class="font-medium mb-2">thnkng.in. Design, código e propósito.</p>
-                <p class="text-sm" style="opacity: 0.7;">© 2026 thnkng.in. Todos os direitos reservados.</p>
-            </div>
+            <p class="copyright">&copy; 2026 thnkng.in. Todos os direitos reservados.</p>
         </div>
     </footer>
-    
+
     <script src="statics/app.js"></script>
 </body>
 </html>
