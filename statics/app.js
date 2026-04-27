@@ -1,5 +1,32 @@
 const header = document.querySelector("header");
 const backToTop = document.querySelector(".back-to-top");
+const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
+const primaryNavigation = document.querySelector("#primary-navigation");
+
+const closeMobileMenu = () => {
+  if (header) {
+    header.classList.remove("mobile-menu-open");
+  }
+
+  if (mobileMenuToggle) {
+    mobileMenuToggle.setAttribute("aria-expanded", "false");
+    mobileMenuToggle.setAttribute("aria-label", "Abrir menu");
+  }
+};
+
+if (header && mobileMenuToggle && primaryNavigation) {
+  mobileMenuToggle.addEventListener("click", () => {
+    const isOpen = header.classList.toggle("mobile-menu-open");
+    mobileMenuToggle.setAttribute("aria-expanded", String(isOpen));
+    mobileMenuToggle.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
+  });
+
+  primaryNavigation.addEventListener("click", (event) => {
+    if (event.target.closest("a")) {
+      closeMobileMenu();
+    }
+  });
+}
 
 window.addEventListener("scroll", () => {
   if (window.pageYOffset > 50) {
@@ -40,13 +67,19 @@ document.addEventListener("keydown", (event) => {
   if (event.key === "Tab") {
     document.body.classList.add("user-is-tabbing");
   }
+
+  if (event.key === "Escape") {
+    closeMobileMenu();
+  }
 });
 
 document.addEventListener("mousedown", () => {
   document.body.classList.remove("user-is-tabbing");
 });
 
-lucide.createIcons();
+if (window.lucide) {
+  lucide.createIcons();
+}
 
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
