@@ -1,0 +1,351 @@
+{
+  "name": "thnkng.in Design System",
+  "sourceFiles": [
+    "index.html",
+    "statics/styles.css"
+  ],
+  "principles": [
+    "Clareza tecnica antes de ornamento: a interface deve parecer senior, direta e criteriosa.",
+    "Densidade controlada: conteudo rico, mas organizado em grids, listas e blocos escaneaveis.",
+    "Contraste editorial: alternancia entre fundo branco, superficie cinza clara e secoes escuras.",
+    "Acento pontual: o magenta identifica marca, chamadas e estados ativos, sem dominar a pagina.",
+    "Bordas discretas: componentes usam raio pequeno, linhas finas e sombras moderadas.",
+    "Movimento contido: interacoes sobem poucos pixels e usam transicoes curtas."
+  ],
+  "tokens": {
+    "typography": {
+      "fontFamily": {
+        "sans": "\"Inter\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+      },
+      "body": {
+        "desktop": {
+          "fontSize": "18px",
+          "lineHeight": "1.6"
+        },
+        "mobile": {
+          "fontSize": "16px",
+          "lineHeight": "1.65"
+        }
+      },
+      "headings": {
+        "h1": {
+          "fontSize": "clamp(2.2rem, 4.4vw, 4.35rem)",
+          "fontWeight": "600",
+          "lineHeight": "1.08",
+          "maxWidth": "15.5ch",
+          "textWrap": "balance"
+        },
+        "h2": {
+          "fontSize": "clamp(2rem, 4vw, 4rem)",
+          "fontWeight": "550",
+          "lineHeight": "1.05"
+        },
+        "h3": {
+          "fontSize": "1.25rem",
+          "fontWeight": "650",
+          "lineHeight": "1.3"
+        }
+      },
+      "labels": {
+        "eyebrow": {
+          "fontSize": "0.76rem",
+          "fontWeight": "800",
+          "letterSpacing": "0.08em",
+          "textTransform": "uppercase"
+        }
+      },
+      "rules": [
+        "Nao usar letter spacing negativo.",
+        "Manter titulos grandes apenas em secoes principais.",
+        "Usar textos de apoio em muted ou inkSoft, evitando preto puro por padrao."
+      ]
+    },
+    "colors": {
+      "bg": "#ffffff",
+      "fg": "#111111",
+      "muted": "#5f6368",
+      "surface": "#f4f5f7",
+      "line": "#dfe3e8",
+      "accent": "#ff006e",
+      "accentDark": "#c90055",
+      "blue": "#0b5fff",
+      "green": "#147d64",
+      "inkSoft": "#24272c",
+      "onDarkText": "rgba(255, 255, 255, 0.72)",
+      "onDarkBorder": "rgba(255, 255, 255, 0.14)",
+      "accentLight": "#ff8ab9"
+    },
+    "spacing": {
+      "container": {
+        "width": "min(100%, 1280px)",
+        "paddingDesktop": "0 64px",
+        "paddingMobile": "0 20px",
+        "paddingSmallMobile": "0 16px"
+      },
+      "sections": {
+        "default": "112px 0",
+        "mobile": "64px 0",
+        "heroDesktop": "124px 0 104px",
+        "heroMobile": "104px 0 56px",
+        "compactDark": "84px 0"
+      },
+      "gaps": {
+        "layoutDesktop": "72px",
+        "layoutTablet": "42px",
+        "layoutMobile": "30px",
+        "gridDesktop": "16px to 18px",
+        "gridMobile": "12px"
+      }
+    },
+    "shape": {
+      "borderRadius": "8px",
+      "borderNeutral": "1px solid var(--line)",
+      "borderSubtle": "1px solid rgba(17, 17, 17, 0.1)",
+      "borderOnDark": "1px solid rgba(255, 255, 255, 0.14)"
+    },
+    "shadows": {
+      "cardHover": "0 16px 36px rgba(17, 17, 17, 0.08)",
+      "panel": "0 22px 54px rgba(17, 17, 17, 0.09)",
+      "contactCard": "0 18px 42px rgba(17, 17, 17, 0.08)",
+      "accentButton": "0 12px 26px rgba(255, 0, 110, 0.2)"
+    },
+    "motion": {
+      "fastTransition": "180ms ease",
+      "headerTransition": "200ms ease",
+      "scrollAnimation": "520ms ease",
+      "buttonHoverTransform": "translateY(-2px)",
+      "cardHoverTransform": "translateY(-3px)",
+      "focusVisible": "2px solid var(--accent), offset 3px",
+      "reducedMotion": "Respeitar prefers-reduced-motion reduzindo animacoes e transicoes."
+    }
+  },
+  "layout": {
+    "structure": [
+      "Header fixo com blur.",
+      "Hero com canvas decorativo e painel lateral.",
+      "Secoes alternadas entre branco, surface e fg.",
+      "Grids de cards para problemas, processo, casos e expertises.",
+      "Lista horizontal de ofertas em linhas divididas.",
+      "Footer escuro."
+    ],
+    "grids": {
+      "hero": "minmax(0, 1fr) minmax(340px, 450px)",
+      "threeColumnCards": "repeat(3, minmax(0, 1fr))",
+      "editorialTwoColumn": "minmax(0, 0.82fr) minmax(0, 1fr)",
+      "offerRow": "minmax(210px, 0.7fr) minmax(0, 1.1fr) minmax(210px, 0.65fr)"
+    },
+    "breakpoints": {
+      "tablet": {
+        "maxWidth": "1080px",
+        "rules": [
+          "Layouts principais viram uma coluna.",
+          "Grids de cards viram duas colunas.",
+          "CTA do header fica oculto."
+        ]
+      },
+      "mobile": {
+        "maxWidth": "760px",
+        "rules": [
+          "Todos os grids viram uma coluna.",
+          "Menu mobile substitui navegacao horizontal.",
+          "CTAs principais podem ocupar 100% da largura."
+        ]
+      },
+      "smallMobile": {
+        "maxWidth": "420px",
+        "rules": [
+          "Container reduz padding horizontal para 16px.",
+          "Botoes ajustam padding e tamanho."
+        ]
+      }
+    }
+  },
+  "components": {
+    "header": {
+      "description": "Header fixo, translucido e com blur.",
+      "desktop": [
+        "Min-height interno de 66px.",
+        "Navegacao central com underline magenta animado.",
+        "CTA pequeno no canto direito."
+      ],
+      "mobile": [
+        "Grid de logo e botao de menu.",
+        "Menu aberto como painel branco com borda, sombra e links de 48px."
+      ]
+    },
+    "logo": {
+      "text": "thnkng.in",
+      "fontWeight": "300",
+      "desktopSize": "1.75rem",
+      "mobileSize": "1.5rem",
+      "dotColor": "accent"
+    },
+    "button": {
+      "base": {
+        "display": "inline-flex",
+        "gap": "10px",
+        "minHeight": "48px",
+        "padding": "0 22px",
+        "borderRadius": "8px",
+        "fontSize": "0.94rem",
+        "fontWeight": "700",
+        "iconSize": "18px"
+      },
+      "variants": {
+        "primary": "Fundo fg e texto bg.",
+        "accent": "Fundo accent, texto branco e sombra magenta.",
+        "secondary": "Fundo branco, borda fg e texto fg; inverte no hover.",
+        "small": "Min-height 38px, padding 0 14px, fonte 0.84rem."
+      }
+    },
+    "hero": {
+      "elements": [
+        "Canvas absoluto no fundo.",
+        "Texto principal em coluna.",
+        "Subtitulo em inkSoft.",
+        "Acoes em linha com quebra.",
+        "Painel lateral signal-panel com blur, borda, sombra e checklist."
+      ],
+      "rules": [
+        "H1 curto e impactante.",
+        "Painel lateral com sinais concretos de quando contratar.",
+        "Evitar hero de marketing generico."
+      ]
+    },
+    "compactCard": {
+      "usage": "Problemas, capacidades ou itens curtos.",
+      "style": {
+        "background": "#ffffff",
+        "border": "1px solid rgba(17, 17, 17, 0.1)",
+        "borderRadius": "8px",
+        "padding": "24px",
+        "mobilePadding": "20px",
+        "minHeightDesktop": "230px",
+        "iconColor": "blue",
+        "iconSize": "28px"
+      },
+      "hover": [
+        "Borda magenta translucida.",
+        "Sombra leve.",
+        "translateY(-3px)."
+      ]
+    },
+    "processCard": {
+      "usage": "Etapas numeradas em secao escura.",
+      "style": {
+        "background": "rgba(255, 255, 255, 0.045)",
+        "border": "1px solid rgba(255, 255, 255, 0.14)",
+        "padding": "28px",
+        "minHeight": "390px",
+        "iconColor": "accentLight"
+      }
+    },
+    "offerRow": {
+      "usage": "Servicos com indice, descricao e bullets.",
+      "style": [
+        "Lista com borda superior.",
+        "Cada linha tem padding 34px 0.",
+        "Grid de tres colunas no desktop.",
+        "Bullets usam ponto verde.",
+        "Em tablet/mobile vira uma coluna."
+      ]
+    },
+    "caseCard": {
+      "usage": "Estudos anonimizados ou exemplos de experiencia.",
+      "style": [
+        "Fundo branco, borda neutra, raio 8px, padding 28px.",
+        "Label magenta em uppercase.",
+        "Conteudo em dl com dt uppercase e dd em muted.",
+        "Mesmo hover dos cards compactos."
+      ]
+    },
+    "expertiseItem": {
+      "usage": "Capacidades tecnicas em grade.",
+      "style": [
+        "Tres colunas no desktop, uma no mobile.",
+        "Borda line, raio 8px, padding 18px.",
+        "Icone magenta de 24px.",
+        "Descricao pequena em muted."
+      ]
+    },
+    "contactNote": {
+      "style": {
+        "borderLeft": "4px solid var(--accent)",
+        "background": "#ffffff",
+        "padding": "18px 20px",
+        "color": "inkSoft"
+      }
+    },
+    "contactCard": {
+      "style": [
+        "Fundo branco.",
+        "Borda neutra.",
+        "Sombra contactCard.",
+        "Padding 28px.",
+        "Titulo clamp(1.6rem, 3vw, 2.5rem).",
+        "Link de e-mail em magenta, peso 750."
+      ]
+    },
+    "backToTop": {
+      "style": [
+        "Botao fixo inferior direito.",
+        "Tamanho desktop 42px, mobile 38px.",
+        "Fundo preto translucido.",
+        "Aparece com classe is-visible.",
+        "Hover usa accent."
+      ]
+    }
+  },
+  "iconography": {
+    "library": "Lucide",
+    "usage": [
+      "Usar data-lucide.",
+      "Icones em botoes: 18px, stroke-width 2.",
+      "Icones de cards: 24px a 34px, conforme hierarquia.",
+      "Magenta para marca, acoes e etapas escuras.",
+      "Azul para informacao/capacidade em cards compactos.",
+      "Verde para bullets de beneficios ou resultados."
+    ]
+  },
+  "accessibility": [
+    "Manter aria-label em navegacao, logo, menu mobile e botoes icon-only.",
+    "Links de navegacao devem ter estados hover e active.",
+    "Nao depender apenas de canvas ou elementos decorativos para comunicar conteudo.",
+    "Preservar contraste alto em secoes escuras.",
+    "Todo controle interativo deve ter foco visivel.",
+    "Em mobile, botoes e links principais devem manter altura minima proxima de 44px a 50px."
+  ],
+  "contentVoice": {
+    "tone": [
+      "Tecnico, direto e senior.",
+      "Evitar promessa vaga ou linguagem de agencia generica.",
+      "Preferir problemas concretos: escala, performance, integracao, risco, decisao, operacao."
+    ],
+    "patterns": [
+      "Eyebrows curtas, em uppercase, com foco conceitual.",
+      "Titulos de secao com uma frase forte e especifica.",
+      "Paragrafos explicam contexto, impacto e criterio.",
+      "Cards devem ter titulo curto e descricao de uma frase.",
+      "CTAs devem pedir uma acao qualificada, como Solicitar diagnostico ou Falar sobre um problema."
+    ]
+  },
+  "newSectionChecklist": [
+    "Usa section-spacing, exceto quando houver motivo para uma variacao compacta.",
+    "Mantem conteudo dentro de container.",
+    "Alterna fundo com criterio: branco, surface ou dark-section.",
+    "Usa no maximo uma estrutura principal por secao: heading + grid, heading + lista ou layout duas colunas.",
+    "Usa raio 8px, bordas finas e sombras moderadas.",
+    "Reaproveita eyebrow, btn, cards e grids existentes antes de criar novas classes.",
+    "Verifica mobile em 760px e 420px.",
+    "Mantem foco visivel e estados de hover coerentes."
+  ],
+  "antiPatterns": [
+    "Nao usar gradientes ornamentais ou grandes fundos decorativos alem do canvas hero existente.",
+    "Nao usar cards dentro de cards.",
+    "Nao ampliar excessivamente o raio das bordas.",
+    "Nao transformar secoes operacionais em landing page promocional.",
+    "Nao usar roxo/azul em excesso; o acento principal ja e magenta.",
+    "Nao criar copy generica como solucoes inovadoras sem problema tecnico concreto.",
+    "Nao adicionar animacoes longas, saltos grandes ou efeitos que desviem da leitura."
+  ]
+}
