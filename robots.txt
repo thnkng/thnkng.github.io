@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /.git/
+Disallow: /.github/
+Disallow: /skills/
 
-Sitemap: https://www.thnkng.in/sitemap.xml
+Sitemap: https://www.thinkng.co/sitemap.xml
