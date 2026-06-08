@@ -1,7 +1,7 @@
 {
   "name": "thnkng.in",
   "short_name": "thnkng.in",
-  "description": "Boutique técnica para arquitetura, escala, performance e integração.",
+  "description": "IA, automações, integrações e sistemas inteligentes para evolução operacional.",
   "lang": "pt-BR",
   "start_url": "/",
   "scope": "/",
@@ -10,14 +10,8 @@
   "theme_color": "#ffffff",
   "icons": [
     {
-      "src": "/favicon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any"
-    },
-    {
-      "src": "/statics/social-logo.png",
-      "sizes": "200x69",
+      "src": "/statics/logo_thinkng_simbol.png",
+      "sizes": "435x516",
       "type": "image/png",
       "purpose": "any"
     }

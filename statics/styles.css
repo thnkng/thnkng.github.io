@@ -111,19 +111,35 @@ header.scrolled {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  min-height: 66px;
+  min-height: 76px;
 }
 
 .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   color: var(--fg);
-  font-size: 1.75rem;
-  font-weight: 300;
+  font-size: 1.85rem;
+  font-weight: 400;
   letter-spacing: 0;
   line-height: 1;
   text-decoration: none;
   white-space: nowrap;
 }
 
+.logo-mark {
+  width: 44px;
+  height: 52px;
+  flex: 0 0 auto;
+  object-fit: contain;
+}
+
+.logo-word {
+  display: inline-block;
+  transform: translateY(-1px);
+}
+
+.logo-accent,
 .logo-dot {
   color: var(--accent);
 }
@@ -442,6 +458,85 @@ nav a.active::after {
   font-size: 0.95rem;
 }
 
+.product-section {
+  background: #ffffff;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.product-card {
+  display: grid;
+  gap: 18px;
+  min-height: 390px;
+  border: 1px solid rgba(17, 17, 17, 0.1);
+  border-radius: 8px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8f9fb 100%);
+  padding: 28px;
+  transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+.product-card:hover {
+  border-color: rgba(255, 0, 110, 0.35);
+  box-shadow: 0 18px 42px rgba(17, 17, 17, 0.08);
+  transform: translateY(-3px);
+}
+
+.product-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.product-card-top i {
+  width: 32px;
+  height: 32px;
+  color: var(--accent);
+  stroke-width: 1.8;
+}
+
+.product-card-top span {
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.product-card h3 {
+  font-size: clamp(1.7rem, 2.6vw, 2.35rem);
+  line-height: 1.05;
+}
+
+.product-card p {
+  color: var(--ink-soft);
+}
+
+.product-card ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-self: end;
+  list-style: none;
+}
+
+.product-card li {
+  border: 1px solid rgba(17, 17, 17, 0.1);
+  border-radius: 999px;
+  background: #ffffff;
+  padding: 7px 10px;
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+  font-weight: 750;
+  line-height: 1;
+}
+
 .offer-list {
   display: grid;
   border-top: 1px solid var(--line);
@@ -680,6 +775,14 @@ footer a {
 
 footer .logo {
   color: #ffffff;
+  gap: 6px;
+  font-size: 1.55rem;
+}
+
+footer .logo-mark {
+  width: 32px;
+  height: 38px;
+  filter: none;
 }
 
 .footer-links {
@@ -775,7 +878,8 @@ footer .logo {
 
   .dense-grid,
   .process-grid,
-  .case-grid {
+  .case-grid,
+  .product-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -832,7 +936,22 @@ footer .logo {
 
   .logo {
     align-self: center;
-    font-size: 1.5rem;
+    gap: 6px;
+    font-size: 1.55rem;
+  }
+
+  .logo-mark {
+    width: 36px;
+    height: 42px;
+  }
+
+  footer .logo {
+    font-size: 1.35rem;
+  }
+
+  footer .logo-mark {
+    width: 28px;
+    height: 32px;
   }
 
   .header-cta {
@@ -945,6 +1064,7 @@ footer .logo {
   .dense-grid,
   .process-grid,
   .case-grid,
+  .product-grid,
   .metric-row,
   .expertise-grid {
     grid-template-columns: 1fr;
@@ -955,6 +1075,7 @@ footer .logo {
   .contact-card,
   .compact-card,
   .case-card,
+  .product-card,
   .process-card {
     padding: 20px;
   }
@@ -974,9 +1095,22 @@ footer .logo {
   }
 
   .compact-card,
+  .product-card,
   .process-card,
   .expertise-grid article {
     min-height: auto;
+  }
+
+  .product-card {
+    gap: 16px;
+  }
+
+  .product-card-top {
+    align-items: flex-start;
+  }
+
+  .product-card h3 {
+    font-size: 1.55rem;
   }
 
   .compact-card i {
